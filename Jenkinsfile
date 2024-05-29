@@ -8,7 +8,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm install' 
-                withDockerRegistry(credentialsId: 'docker-hub', url: 'https://hub.docker.com') {
+                withDockerRegistry(credentialsId: 'docker-hub') {
                   sh 'docker build -t sonhn98/react-js-jenkins .'
                   sh 'docker push sonhn98/react-js-jenkins .'
                 }
