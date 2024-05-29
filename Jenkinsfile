@@ -7,9 +7,11 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                withDockerRegistry(credentialsId: 'docker-hub', toolName: 'docker', url: 'https://index.docker.io/v1/') {
+                script {
+                  withDockerRegistry(credentialsId: 'docker-hub') {
                     sh 'docker build -t sonhn98/react-js-jenkins .'
-                  // sh 'docker push sonhn98/react-js-jenkins'
+                    // sh 'docker push sonhn98/react-js-jenkins'
+                  }
                 }
             }
         }
