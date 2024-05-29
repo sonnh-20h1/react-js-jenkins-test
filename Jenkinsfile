@@ -9,7 +9,7 @@ pipeline {
             steps {
                 script {
                   withDockerRegistry(credentialsId: 'docker-hub-01') {
-                    sh 'docker build -t sonhn98/react-js-jenkins .'
+                    sh 'docker -v'
                     // sh 'docker push sonhn98/react-js-jenkins'
                   }
                 }
