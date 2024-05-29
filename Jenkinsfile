@@ -10,17 +10,11 @@ pipeline {
                 sh 'npm install' 
             }
         }
-    }
-
-    stages {
         stage('Test') { 
             steps {
                 sh 'npm run test' 
             }
         }
-    }
-
-    stages {
         stage('Deploy') { 
             steps {
                 sh 'npm run build' 
