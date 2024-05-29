@@ -8,7 +8,7 @@ pipeline {
         stage('Build') { 
             steps {
                 script {
-                  withDockerRegistry(credentialsId: 'docker-hub-01') {
+                  withDockerRegistry(credentialsId: 'docker-hub-01s') {
                     sh 'docker build -t sonhn98/react-js-jenkins .'
                     // sh 'docker push sonhn98/react-js-jenkins'
                   }
