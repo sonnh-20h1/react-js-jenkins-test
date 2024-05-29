@@ -8,6 +8,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm install' 
+                sh 'docker build -t sonhn98/react-js-jenkins .'
             }
         }
         stage('Test') { 
